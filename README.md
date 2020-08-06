@@ -1,2 +1,2 @@
-# BT
+# blenderToolkit
 COLLECTED BLENDER SCRIPTS
