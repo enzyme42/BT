@@ -1,5 +1,4 @@
 # blenderToolkit: selectedFacesArea v1.1
-# © 2020 enzyme42.com
 
 import bpy
 import bmesh
@@ -24,7 +23,9 @@ if bpy.context.edit_object:
     bm = bmesh.from_edit_mesh(mesh)
 
     for face in bm.faces:
+
         if face.select:
+            
             area_sum += face.calc_area()
             face_count += 1
 
@@ -32,13 +33,14 @@ if bpy.context.edit_object:
     "AVERAGE FACE AREA: %s m2" % (area_sum/face_count if face_count > 0 else 0),
     "TOTAL SELECTED AREA: %s m2" % area_sum]
 
-    bpy.context.window_manager.popup_menu(resultPopup, title="[e42] selectedFacesArea", icon='INFO')
+    bpy.context.window_manager.popup_menu(resultPopup, title="[NERDSTERN] selectedFacesArea", icon='INFO')
 
-    print("\n[> e42] selectedFacesArea:\n\n%s\n%s\n\n%s\n\n[<]" % (result[0], result[1], result[2]))
+    print("\n[> NERDSTERN] selectedFacesArea:\n\n%s\n%s\n\n%s\n\n[<]" % (result[0], result[1], result[2]))
 
 else:
+
     error = "ERROR: This script only works in 'Edit Mode'."
 
-    bpy.context.window_manager.popup_menu(errorPopup, title="[e42] selectedFacesArea", icon='ERROR')
+    bpy.context.window_manager.popup_menu(errorPopup, title="[NERDSTERN] selectedFacesArea", icon='ERROR')
 
-    print("\n[> e42] selectedFacesArea:\n\n%s\n\n[<]" % error)
+    print("\n[> NERDSTERN] selectedFacesArea:\n\n%s\n\n[<]" % error)
