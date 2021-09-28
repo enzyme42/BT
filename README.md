@@ -1,2 +1,2 @@
 # blenderToolkit
-COLLECTED BLENDER SCRIPTS
+Collection of Blender scripts and plug-ins.
